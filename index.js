@@ -1,7 +1,9 @@
+import dotenv from 'dotenv';
 import express from 'express'
 import authRouter from './routes/auth.js';
+import cartRouter from './routes/cart.js';
+import productsRouter from './routes/products.js';
 import { dbConnection } from './database/config.js';
-import dotenv from 'dotenv';
 
 //Iniciando app
 const app = express()
@@ -12,6 +14,13 @@ app.use(express.json())
 
 //Ruta para el auth
 app.use('/api/auth', authRouter)
+
+//Ruta para carrita
+app.use('/api/cart', cartRouter)
+
+
+//Ruta para productos
+app.use('/api/products', productsRouter)
 
 
 
