@@ -1,10 +1,9 @@
 import { Schema, model } from 'mongoose';
 
-// Esquema para un ítem del carrito
 const CartItemSchema = new Schema({
-    product: {
-        type: Schema.Types.ObjectId, 
-        ref: 'Product',  // Referencia al modelo de Producto
+    productId: {
+        type: Schema.Types.ObjectId,
+        ref: 'Product',
         required: true
     },
     quantity: {
@@ -14,30 +13,15 @@ const CartItemSchema = new Schema({
     }
 });
 
-// Esquema para el carrito de compras
 const CartSchema = new Schema({
-    user: {
-        type: Schema.Types.ObjectId, 
-        ref: 'User',  // Referencia al modelo de Usuario
+    userId: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
         required: true
     },
-    items: [CartItemSchema],  // Una lista de ítems
-    totalPrice: {
-        type: Number,
-        required: true,
-        default: 0,
-        min: 0
-    },
-    createdAt: {
-        type: Date,
-        default: Date.now
-    },
-    updatedAt: {
-        type: Date,
-        default: Date.now
-    }
+    items: [CartItemSchema]
 });
 
+const Cart = model('Cart', CartSchema, "Carts");
 
-const Cart = model('Cart', CartSchema);
 export default Cart;
