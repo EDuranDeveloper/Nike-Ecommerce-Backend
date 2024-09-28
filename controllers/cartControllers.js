@@ -86,6 +86,9 @@ const removeCartItem = async(req, res = response) => {
     const productFind = await Product.findById( productId )
     const userFind = await User.findById( userId )
 
+    // console.log(userId, productId);
+    console.log(userFind);
+
     try {
         if ( !userFind || !productFind ) {
         return res.status(500).json({
@@ -96,7 +99,10 @@ const removeCartItem = async(req, res = response) => {
 
     const cart = await Cart.findOne({ userId });
 
-    cart.items = cart.items.filter((item) => item.productId != productId)
+
+    console.log(cart.items);
+
+    cart.items = cart.items.filter((item) => item.productId != productId )
 
     await cart.save()
 

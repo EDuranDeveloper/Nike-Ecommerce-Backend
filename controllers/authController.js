@@ -44,7 +44,8 @@ const userLogin = async (req, res = response) => {
   }
 };
 
-const userRegister = async (req, res = response) => {
+const userRegister = async(req, res = response) => {
+
   const { name, email, password, confirmPassword } = req.body;
 
   try {
@@ -62,13 +63,15 @@ const userRegister = async (req, res = response) => {
     const hashedPassword = await encryptPass({ password, confirmPassword });
     const token = await generatedJWT( user.id, user.name )
 
-    const newUser = new User({
+    user = new User({
       name,
       email,
       password: hashedPassword,
     });
 
-    await newUser.save();
+    console.log(user);
+
+    await user.save();
 
     res.status(201).json({
       ok: true,
