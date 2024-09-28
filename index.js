@@ -34,5 +34,5 @@ dotenv.config()
 
 //Escuchando en el puerto 
 app.listen(process.env.PORT, () => {
-    console.log('Server ON');
+    console.log(`Server ON in port ${ process.env.PORT }`);
 })

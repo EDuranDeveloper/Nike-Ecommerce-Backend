@@ -2,6 +2,7 @@ import { Router } from 'express'
 import { check } from 'express-validator'
 import { userLogin, userRegister, userRenew } from '../controllers/authController.js'
 import { fieldValidator } from '../middlewares/fieldValidator.js'
+import { JWTvalidator } from '../middlewares/JWTvalidator.js';
 
 
 //Route for /api/auth
@@ -20,7 +21,7 @@ router.post('/new', [
     fieldValidator
 ], userRegister)
 
-router.get('/renew', [], userRenew)
+router.get('/renew', JWTvalidator, userRenew)
 
 
 

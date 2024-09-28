@@ -1,7 +1,8 @@
 import { response } from "express";
 import { encryptPass } from "../helpers/encryptPass.js";
+import { generatedJWT } from "../helpers/jwt.js";
+import bcrypt from 'bcrypt';
 import User from "../models/User.js";
-import bcrypt from 'bcrypt'
 
 const userLogin = async (req, res = response) => {
   const { email, password } = req.body;
@@ -25,11 +26,14 @@ const userLogin = async (req, res = response) => {
         })
     }
 
+    const token = await generatedJWT( user.id, user.name )
+
     res.json({
         ok: true,
         uid: user.uid,
         name: user.name,
         email: user.email,
+        token
     })
 
 
@@ -46,14 +50,17 @@ const userRegister = async (req, res = response) => {
   try {
     let user = await User.findOne({ email });
 
-    if (user) {
+    if ( user ) {
       return res.status(400).json({
         ok: false,
         msg: "User existing",
       });
     }
 
+    user = new User( req.body )
+
     const hashedPassword = await encryptPass({ password, confirmPassword });
+    const token = await generatedJWT( user.id, user.name )
 
     const newUser = new User({
       name,
@@ -66,7 +73,11 @@ const userRegister = async (req, res = response) => {
     res.status(201).json({
       ok: true,
       msg: "User created!",
+      uid: user.id,
+      name: user.name,
+      token
     });
+
   } catch (error) {
     res.status(500).json({
       ok: false,
@@ -75,6 +86,20 @@ const userRegister = async (req, res = response) => {
   }
 };
 
-const userRenew = (req, res = response) => {};
+const userRenew = async(req, res = response) => {
+
+  const { uid, name } = req
+
+  const token = await generatedJWT( uid, name )
+
+
+  res.json({
+    ok: true,
+    msg: "Renew",
+    token,
+    name,
+  })
+
+};
 
 export { userLogin, userRegister, userRenew };
