@@ -28,9 +28,10 @@ const userLogin = async (req, res = response) => {
 
     const token = await generatedJWT( user.id, user.name )
 
+
     res.json({
         ok: true,
-        uid: user.uid,
+        uid: user.id,
         name: user.name,
         email: user.email,
         token
