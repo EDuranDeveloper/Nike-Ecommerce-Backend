@@ -1,5 +1,6 @@
 import dotenv from 'dotenv';
 import express from 'express'
+import cors from 'cors'
 import authRouter from './routes/auth.js';
 import cartRouter from './routes/cart.js';
 import productsRouter from './routes/products.js';
@@ -7,6 +8,9 @@ import { dbConnection } from './database/config.js';
 
 //Iniciando app
 const app = express()
+
+
+app.use(cors())
 
 
 //Investigar que hace
