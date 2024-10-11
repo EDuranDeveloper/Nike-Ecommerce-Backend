@@ -4,7 +4,6 @@ import Product from '../models/Product.js';
 
 const getProducts = async(req, res = response) => {
 
-
     try {
         const products = await Product.find()
         res.status(200).json({

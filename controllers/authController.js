@@ -102,6 +102,7 @@ const userRenew = async(req, res = response) => {
     msg: "Renew",
     token,
     name,
+    uid,
   })
 
 };
