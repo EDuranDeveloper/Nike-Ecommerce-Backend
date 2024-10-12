@@ -15,9 +15,9 @@ router.get("/", getProducts)
 //Aniadir productos
 router.post("/add", [
     check("name", "Name is obligatory").not().isEmpty(),
-    check("name", "Name must be between 3 and 100 characters").isLength({ min: 3, max: 100 }),
+    check("name", "Name must be between 3 and 40 characters").isLength({ min: 3, max: 40 }),
     check("description", "Description is obligatory").not().isEmpty(),
-    check("description", "Description must be between 10 and 100 characters").isLength({ min: 10, max: 100 }),
+    check("description", "Description must be between 10 and 400 characters").isLength({ min: 10, max: 400 }),
     check("price", "Price is obligatory").not().isEmpty(),
     check("price", "Price must be a number greater than 0").isFloat({ min: 0 }),
     check("stock", "Stock is obligatory").not().isEmpty(),

@@ -32,9 +32,11 @@ const ProductSchema = new Schema({
         required: true,
         min: 0
     },
-    imageUrl: {
+    tag: {
         type: String,
-        required: true
+    },
+    imageUrl: {
+        type: [String],
     },
 });
 

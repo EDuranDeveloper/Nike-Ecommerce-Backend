@@ -1,0 +1,122 @@
+[{
+  "_id": {
+    "$oid": "6709f8dafeb51ed1a50aedbf"
+  },
+  "name": "Nike Air Max 90",
+  "category": "Kids",
+  "description": "The look of laces without the struggle of having to tie them? Now, that's easy! We took an icon of '90s style and made it easy to get on little feet—the top lace loop is attached to a hook-and-loop strap, helping kids fasten their fit fast and get on with their day. Playtime, here we come!",
+  "price": 79.99,
+  "discount": 5,
+  "stock": 100,
+  "tag": "NEW",
+  "imageUrl": [
+    "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/38b03abd-3de7-4113-b4da-c318e47a9512/AIR+MAX+90+EASYON+%28PS%29.png",
+    "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/eef5c5e6-688a-4e6a-abbd-6380c8190ee2/AIR+MAX+90+EASYON+%28PS%29.png",
+    "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/933c698c-78bf-4ea3-9059-89745b6b3b60/AIR+MAX+90+EASYON+%28PS%29.png",
+    "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/0a2a624c-90ed-4a23-ae95-1da80c8ed4a1/AIR+MAX+90+EASYON+%28PS%29.png",
+    "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/fa8da8a2-83b4-43ca-8a13-6a9568138a26/AIR+MAX+90+EASYON+%28PS%29.png"
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670a0ccd5ee22d358c9a8a63"
+  },
+  "name": "Nike Air Max 90 EasyOn",
+  "category": "Kids",
+  "description": "The look of laces without the struggle of having to tie them? Now, that's easy! We took an icon of '90s style and made it easy to get on little feet—the top lace loop is attached to a hook-and-loop strap, helping kids fasten their fit fast and get on with their day. Playtime, here we come!The look of laces without the struggle of having to tie them? Now, that's easy!",
+  "price": 69.99,
+  "discount": 20,
+  "stock": 100,
+  "tag": "HOT",
+  "imageUrl": [
+    "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/1a9738a3-7a10-4bcb-b084-dd6df77948bc/AIR+MAX+90+EASYON+%28PS%29.png",
+    "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/47055fa1-882b-434a-96e5-450b4dc6cfc7/AIR+MAX+90+EASYON+%28PS%29.png",
+    "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/5f4b308a-07a7-458b-b30e-3e0db289912e/AIR+MAX+90+EASYON+%28PS%29.png",
+    "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/5607d420-c870-45a3-ae2d-c76a115c6f82/AIR+MAX+90+EASYON+%28PS%29.png",
+    "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/8351d8d3-e550-41ad-aa61-6ce35252d6e9/AIR+MAX+90+EASYON+%28PS%29.png",
+    "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/1261b95f-eaa5-4906-b144-ef0568d165c2/AIR+MAX+90+EASYON+%28PS%29.png"
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670a12735ee22d358c9a8aa4"
+  },
+  "name": "Nike Air Max 90 EasyOn",
+  "category": "Kids",
+  "description": "The look of laces without the struggle of having to tie them? Now, that's easy! We took an icon of '90s style and made it easy to get on little feet—the top lace loop is attached to a hook-and-loop strap, helping kids fasten their fit fast and get on with their day. Playtime, here we come!The look of laces without the struggle of having to tie them? Now, that's easy!",
+  "price": 79.99,
+  "discount": 0,
+  "stock": 100,
+  "tag": "NEW",
+  "imageUrl": [
+    "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/36e69f65-2cc5-4c6e-9523-7d3fad666abb/AIR+MAX+90+EASYON+%28PS%29.png",
+    "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/bd340465-b043-446c-955d-935709b370e0/AIR+MAX+90+EASYON+%28PS%29.png",
+    "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/e9959ad4-204b-486d-8ad8-a364f30de1d6/AIR+MAX+90+EASYON+%28PS%29.png",
+    "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/1ab24198-1dd6-4cd1-9f33-02551cc85929/AIR+MAX+90+EASYON+%28PS%29.png",
+    "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/6ce49125-946f-43c7-ad76-a81d2d588c7a/AIR+MAX+90+EASYON+%28PS%29.png",
+    "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/646253c4-81e7-4af1-92a4-b8446524245c/AIR+MAX+90+EASYON+%28PS%29.png"
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670a133e5ee22d358c9a8ac3"
+  },
+  "name": "Nike Air Max 90 EasyOn",
+  "category": "Kids",
+  "description": "The look of laces without the struggle of having to tie them? Now, that's easy! We took an icon of '90s style and made it easy to get on little feet—the top lace loop is attached to a hook-and-loop strap, helping kids fasten their fit fast and get on with their day. Playtime, here we come!The look of laces without the struggle of having to tie them? Now, that's easy!",
+  "price": 79.99,
+  "discount": 0,
+  "stock": 100,
+  "tag": "",
+  "imageUrl": [
+    "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/70f8e11c-298a-4f11-83e2-a1312fcd3c47/AIR+MAX+90+EASYON+%28PS%29.png",
+    "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/9f2a71d7-6708-4dee-ad33-63c6bbb424c8/AIR+MAX+90+EASYON+%28PS%29.png",
+    "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/4215da51-24a1-4618-a488-650358b5a503/AIR+MAX+90+EASYON+%28PS%29.png",
+    "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/d0a88b62-8494-49eb-8a0a-2f54be535815/AIR+MAX+90+EASYON+%28PS%29.png",
+    "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/bcb7fd51-8127-4749-971f-277e0b339966/AIR+MAX+90+EASYON+%28PS%29.png"
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670a1e13c7e71185485606bc"
+  },
+  "name": "Nike Air Max 90 EasyOn",
+  "category": "Kids",
+  "description": "The look of laces without the struggle of having to tie them? Now, that's easy! We took an icon of '90s style and made it easy to get on little feet—the top lace loop is attached to a hook-and-loop strap, helping kids fasten their fit fast and get on with their day. Playtime, here we come!The look of laces without the struggle of having to tie them? Now, that's easy!",
+  "price": 59.99,
+  "discount": 10,
+  "stock": 100,
+  "imageUrl": [
+    "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/4a0090d4-05c2-46b6-bc73-18fea0bb39e3/AIR+MAX+90+EASYON+%28PS%29.png",
+    "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/c81dc5f0-b346-4767-995a-3cbe9e9520f2/AIR+MAX+90+EASYON+%28PS%29.png",
+    "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/e75629fe-200a-4e4c-b57b-b9726fffda23/AIR+MAX+90+EASYON+%28PS%29.png",
+    "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/614deae3-9f29-47c6-8a13-8d9cb09e6149/AIR+MAX+90+EASYON+%28PS%29.png",
+    "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/7720ed18-7d9a-41bf-acce-971a519a8c5c/AIR+MAX+90+EASYON+%28PS%29.png",
+    "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/abb45fad-927b-47b8-8be3-d2b10b3896ef/AIR+MAX+90+EASYON+%28PS%29.png"
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670a1f56c7e71185485606c4"
+  },
+  "name": "Nike Air Max 90 EasyOn",
+  "category": "Kids",
+  "description": "The look of laces without the struggle of having to tie them? Now, that's easy! We took an icon of '90s style and made it easy to get on little feet—the top lace loop is attached to a hook-and-loop strap, helping kids fasten their fit fast and get on with their day. Playtime, here we come!The look of laces without the struggle of having to tie them? Now, that's easy!",
+  "price": 79.99,
+  "discount": 10,
+  "stock": 100,
+  "imageUrl": [
+    "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/1a9738a3-7a10-4bcb-b084-dd6df77948bc/AIR+MAX+90+EASYON+%28PS%29.png",
+    "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/47055fa1-882b-434a-96e5-450b4dc6cfc7/AIR+MAX+90+EASYON+%28PS%29.png",
+    "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/5f4b308a-07a7-458b-b30e-3e0db289912e/AIR+MAX+90+EASYON+%28PS%29.png",
+    "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/5607d420-c870-45a3-ae2d-c76a115c6f82/AIR+MAX+90+EASYON+%28PS%29.png",
+    "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/8351d8d3-e550-41ad-aa61-6ce35252d6e9/AIR+MAX+90+EASYON+%28PS%29.png",
+    "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/1261b95f-eaa5-4906-b144-ef0568d165c2/AIR+MAX+90+EASYON+%28PS%29.png"
+  ],
+  "__v": 0
+}]

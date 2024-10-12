@@ -22,11 +22,11 @@ const getProducts = async(req, res = response) => {
 
 const addProducts = async(req, res = response) => {
     
-    const { name, description, price, stock, imageUrl  } = req.body
+    const { name, category, description, price, discount, stock, tag, imageUrl  } = req.body
     
 
     try {
-        const newProduct = new Product({ name, description, price, stock, imageUrl  })  
+        const newProduct = new Product({ name, category, description, price, discount, stock, tag, imageUrl  })  
         await newProduct.save()
         
         res.status(201).json({
