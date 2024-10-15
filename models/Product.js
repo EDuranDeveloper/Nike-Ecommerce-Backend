@@ -1,16 +1,20 @@
 import { Schema, model } from 'mongoose';
 
-// Esquema para el Producto
 const ProductSchema = new Schema({
     name: {
         type: String,
         required: true,
         trim: true
     },
+    model: {
+        type: String,
+        required: true,
+        trim: true
+    },
     category: {
-      type: String,
-      required: true,
-      trim: true,
+        type: String,
+        required: true,
+        trim: true,
     },
     description: {
         type: String,
@@ -35,11 +39,21 @@ const ProductSchema = new Schema({
     tag: {
         type: String,
     },
-    imageUrl: {
-        type: [String],
+    principalImage: { 
+        type: String, 
+        required: true, 
     },
-});
+    secondaryImages: { 
+        type: [String], 
+    },
+    color: { 
+     type: String,   
+    },
+    hex: {
+     type: String,
+    }
+}, { versionKey: false }); 
 
 const Product = model('Product', ProductSchema, "Products");
 
-export default Product
+export default Product;

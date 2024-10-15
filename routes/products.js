@@ -22,8 +22,6 @@ router.post("/add", [
     check("price", "Price must be a number greater than 0").isFloat({ min: 0 }),
     check("stock", "Stock is obligatory").not().isEmpty(),
     check("stock", "Stock must be a number greater than or equal to 0").isInt({ min: 0 }),
-    check("imageUrl", "imageUrl is obligatory").not().isEmpty(),
-    check("imageUrl", "imageUrl must be a valid URL").isURL(),
     fieldValidator
 ], addProducts)
 
