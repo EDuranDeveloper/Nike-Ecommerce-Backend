@@ -6,12 +6,30 @@ const CartItemSchema = new Schema({
         ref: 'Product',
         required: true
     },
+    name: {
+        type: String,
+        required: true
+    },
+    price: {
+        type: Number,
+        required: true
+    },
+    principalImage: {
+        type: String
+    },
+    color: {
+        type: String
+    },
+    hex: {
+        type: String
+    },
     quantity: {
         type: Number,
         required: true,
         min: 1
     }
 });
+
 
 const CartSchema = new Schema({
     userId: {

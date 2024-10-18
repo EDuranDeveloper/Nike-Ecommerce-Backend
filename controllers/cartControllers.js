@@ -33,52 +33,63 @@ const getCart = async(req, res = response) => {
 
 
 const addCartItem = async(req, res = response) => {
-    const { userId, productId } = req.params
-    const { quantity } = req.body
+    const { userId, productId } = req.params;
+    const { quantity } = req.body;
 
     try {
-        const product = await Product.findById( productId )
+        // Buscar el producto en la base de datos
+        const product = await Product.findById(productId);
 
-        if ( !product ) {
+        if (!product) {
             return res.status(500).json({
                 ok: false,
-                msg: "Product not found",
-                error: error.message
-            })
+                msg: "Product not found"
+            });
         }
 
-        let cart = await Cart.findOne({ userId })
-        
-        if( !cart ) {
-            cart = new Cart({ userId, items: [] })
+        // Buscar el carrito del usuario
+        let cart = await Cart.findOne({ userId });
+
+        // Si no existe el carrito, se crea uno nuevo
+        if (!cart) {
+            cart = new Cart({ userId, items: [] });
         }
-        
-        let existingItem = cart.items.find(( item ) => item.productId.toString() === productId)
-        console.log(existingItem);
-        
-        if ( existingItem ) {
-            existingItem.quantity++
+
+      
+        let existingItem = cart.items.find((item) => item.productId.toString() === productId);
+
+        if (existingItem) {
+            existingItem.quantity += quantity;
         } else {
-            cart.items.push({ productId, quantity })
+            cart.items.push({
+                productId,
+                name: product.name,
+                price: product.price,
+                principalImage: product.principalImage, 
+                color: product.color,
+                hex: product.hex,
+                quantity
+            });
         }
 
-        await cart.save()
+        // Guardar el carrito
+        await cart.save();
 
         res.json({
             ok: true,
-            msg: "Item add to cart",
+            msg: "Item added to cart",
             productAdd: cart
-        })
+        });
 
     } catch (error) {
-        res.json({
+        res.status(500).json({
             ok: false,
             msg: "Item not added to cart",
             error: error.message
-        })
+        });
     }
+};
 
-}
 
 
 const removeCartItem = async(req, res = response) => {

@@ -70,8 +70,6 @@ const userRegister = async(req, res = response) => {
       password: hashedPassword,
     });
 
-    console.log(user);
-
     await user.save();
 
     res.status(201).json({
