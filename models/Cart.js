@@ -14,11 +14,17 @@ const CartItemSchema = new Schema({
         type: Number,
         required: true
     },
+    discount: {
+        type: Number,
+    },
     principalImage: {
         type: String
     },
     color: {
         type: String
+    },
+    tag: {
+        type: String,
     },
     hex: {
         type: String

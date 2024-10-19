@@ -8,20 +8,19 @@ const getCart = async(req, res = response) => {
     const { userId } = req.params;
 
     try {
-       const cart = await Cart.findOne({ userId }).populate('items.productId')     
-
+       let cart = await Cart.findOne({ userId });
+        
+       // Si no existe el carrito, se crea uno nuevo
        if (!cart) {
-        return res.status(404).json({
-            ok: false,
-            msg: "Cart not found"
-        })
+           cart = new Cart({ userId, items: [] });
+           await cart.save(); 
        }
 
        res.status(200).json({
         ok: true,
         msg: "Cart found",
         cart
-       })
+       });
 
     } catch (error) {
         res.status(500).json({ 
@@ -29,7 +28,8 @@ const getCart = async(req, res = response) => {
             msg: 'Error obtaining cart' 
         });
     }
-}
+};
+
 
 
 const addCartItem = async(req, res = response) => {
@@ -40,6 +40,7 @@ const addCartItem = async(req, res = response) => {
         // Buscar el producto en la base de datos
         const product = await Product.findById(productId);
 
+
         if (!product) {
             return res.status(500).json({
                 ok: false,
@@ -49,6 +50,7 @@ const addCartItem = async(req, res = response) => {
 
         // Buscar el carrito del usuario
         let cart = await Cart.findOne({ userId });
+
 
         // Si no existe el carrito, se crea uno nuevo
         if (!cart) {
@@ -65,8 +67,10 @@ const addCartItem = async(req, res = response) => {
                 productId,
                 name: product.name,
                 price: product.price,
+                discount: product.discount,
                 principalImage: product.principalImage, 
                 color: product.color,
+                tag: product.tag,
                 hex: product.hex,
                 quantity
             });
