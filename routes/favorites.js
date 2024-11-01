@@ -1,10 +1,9 @@
 import { Router } from 'express'
 import { check } from 'express-validator'
-import { addCartItem, getCart, removeCartItem, updateCartItemQuantity } from '../controllers/cartControllers.js'
 import { fieldValidator } from '../middlewares/fieldValidator.js'
-import { JWTvalidator } from '../middlewares/JWTvalidator.js'
+import { addFavoriteItem, deleteFavoriteItem, getFavorite } from '../controllers/favoriteController.js'
 
-//Router /api/cart
+//Router /api/favorites
 
 
 const router = Router()
@@ -12,20 +11,19 @@ const router = Router()
 router.get('/:userId',[
     check("userId", "Invalid User ID").isMongoId(),
     fieldValidator,
-], getCart)
+], getFavorite)
+
 router.post('/:userId/:productId/add', [
     check("userId", "Invalid User ID").isMongoId(),
     check("productId", "Invalid Product ID").isMongoId(),
     fieldValidator,
-], addCartItem)
-
-router.patch('/:userId/:productId/update', updateCartItemQuantity);
+], addFavoriteItem)
 
 router.delete("/:userId/:productId/remove", [
     check("userId", "Invalid User ID").isMongoId(),
     check("productId", "Invalid Product ID").isMongoId(),
     fieldValidator,
-], removeCartItem)
+], deleteFavoriteItem)
 
 
 

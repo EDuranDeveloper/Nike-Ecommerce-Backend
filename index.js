@@ -4,6 +4,7 @@ import cors from 'cors'
 import authRouter from './routes/auth.js';
 import cartRouter from './routes/cart.js';
 import productsRouter from './routes/products.js';
+import favoritesRouter from './routes/favorites.js';
 import { dbConnection } from './database/config.js';
 
 //Iniciando app
@@ -25,6 +26,9 @@ app.use('/api/cart', cartRouter)
 
 //Ruta para productos
 app.use('/api/products', productsRouter)
+
+//Ruta para favoritos
+app.use('/api/favorites', favoritesRouter)
 
 
 

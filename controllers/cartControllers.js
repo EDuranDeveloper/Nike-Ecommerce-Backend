@@ -101,9 +101,6 @@ const removeCartItem = async(req, res = response) => {
     const productFind = await Product.findById( productId )
     const userFind = await User.findById( userId )
 
-    // console.log(userId, productId);
-    console.log(userFind);
-
     try {
         if ( !userFind || !productFind ) {
         return res.status(500).json({
@@ -113,9 +110,6 @@ const removeCartItem = async(req, res = response) => {
     }
 
     const cart = await Cart.findOne({ userId });
-
-
-    console.log(cart.items);
 
     cart.items = cart.items.filter((item) => item.productId != productId )
 
@@ -136,10 +130,64 @@ const removeCartItem = async(req, res = response) => {
     }
 }
 
+const updateCartItemQuantity = async (req, res = response) => {
+    const { userId, productId } = req.params; 
+    const { quantity } = req.body;
+
+    try {
+       
+        
+        let cart = await Cart.findOne({ userId });
+
+      
+        if (!cart) {
+            return res.status(404).json({
+                ok: false,
+                msg: "Cart not found",
+            });
+        }
+
+        
+        let existingItem = cart.items.find((item) => item.productId.toString() === productId);
+
+        
+        if (!existingItem) {
+            return res.status(404).json({
+                ok: false,
+                msg: "Item not found in the cart",
+            });
+        }
+
+        existingItem.quantity += quantity;
+
+
+        if (existingItem.quantity <= 0) {
+            cart.items = cart.items.filter(item => item.productId.toString() !== productId);
+        }
+
+        await cart.save();
+
+        res.status(200).json({
+            ok: true,
+            msg: "Cart item quantity updated successfully",
+            cart,
+        });
+
+    } catch (error) {
+        res.status(500).json({
+            ok: false,
+            msg: "Failed to update cart item quantity",
+            error: error.message,
+        });
+    }
+};
+
+
 
 
 export { 
     getCart,
     addCartItem,
     removeCartItem,
+    updateCartItemQuantity,
 }
