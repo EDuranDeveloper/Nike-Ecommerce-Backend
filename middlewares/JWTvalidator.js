@@ -18,6 +18,8 @@ const JWTvalidator = async( req, res = response, next ) => {
 
         const { uid, name } = jwt.verify( token, process.env.SECRET_JWT_SEED)
 
+        console.log(uid, name);
+
         req.uid = uid
         req.name = name
 

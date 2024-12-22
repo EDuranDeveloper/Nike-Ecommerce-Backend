@@ -46,32 +46,32 @@ const userLogin = async (req, res = response) => {
 };
 
 const userRegister = async(req, res = response) => {
-
   const { name, email, password, confirmPassword } = req.body;
 
   try {
     let user = await User.findOne({ email });
-
-    if ( user ) {
+    if (user) {
       return res.status(400).json({
         ok: false,
         msg: "User existing",
       });
     }
 
-    user = new User( req.body )
-
-    const hashedPassword = await encryptPass({ password, confirmPassword });
-    const token = await generatedJWT( user.id, user.name )
-
+   
+    const hashedPassword = await encryptPass({password, confirmPassword});
+    
     user = new User({
       name,
       email,
       password: hashedPassword,
     });
 
+
     await user.save();
 
+    const token = await generatedJWT(user.id, user.name);
+
+    // Responder con la información del usuario y el token
     res.status(201).json({
       ok: true,
       msg: "User created!",
@@ -81,12 +81,14 @@ const userRegister = async(req, res = response) => {
     });
 
   } catch (error) {
+    console.error(error); // Para facilitar el debugging
     res.status(500).json({
       ok: false,
       msg: "User not created",
     });
   }
 };
+
 
 const userRenew = async(req, res = response) => {
 
