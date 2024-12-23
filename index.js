@@ -5,6 +5,7 @@ import authRouter from './routes/auth.js';
 import cartRouter from './routes/cart.js';
 import productsRouter from './routes/products.js';
 import favoritesRouter from './routes/favorites.js';
+import ordersRouter from './routes/orders.js';
 import { dbConnection } from './database/config.js';
 
 //Iniciando app
@@ -29,6 +30,8 @@ app.use('/api/products', productsRouter)
 
 //Ruta para favoritos
 app.use('/api/favorites', favoritesRouter)
+
+app.use('/api/orders', ordersRouter)
 
 
 

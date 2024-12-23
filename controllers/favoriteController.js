@@ -51,9 +51,6 @@ const addFavoriteItem = async(req, res = response) => {
         if (!favorites) {
             favorites = new Favorite({ userId, items: [] });
         }
-
-        console.log(favorites);
-
       
         let existingItem = favorites.items.find((item) => item.productId.toString() === productId);
 
