@@ -6,6 +6,7 @@ import cartRouter from './routes/cart.js';
 import productsRouter from './routes/products.js';
 import favoritesRouter from './routes/favorites.js';
 import ordersRouter from './routes/orders.js';
+import accountRouter from './routes/account.js';
 import { dbConnection } from './database/config.js';
 
 //Iniciando app
@@ -32,6 +33,8 @@ app.use('/api/products', productsRouter)
 app.use('/api/favorites', favoritesRouter)
 
 app.use('/api/orders', ordersRouter)
+
+app.use('/api/account', accountRouter)
 
 
 

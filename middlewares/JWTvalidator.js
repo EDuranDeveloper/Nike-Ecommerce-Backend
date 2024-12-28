@@ -24,7 +24,7 @@ const JWTvalidator = async( req, res = response, next ) => {
     } catch (error) {
         return res.status(401).json({
             ok: false,
-            msg: "Not foun token"
+            msg: "Not found token"
         })
     }
 
