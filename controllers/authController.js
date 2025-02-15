@@ -26,7 +26,7 @@ const userLogin = async (req, res = response) => {
         })
     }
 
-    const token = await generatedJWT( user.id, user.name )
+    const token = await generatedJWT( user.id, user.name, user.email )
 
 
     res.json({
@@ -69,19 +69,20 @@ const userRegister = async(req, res = response) => {
 
     await user.save();
 
-    const token = await generatedJWT(user.id, user.name);
+    const token = await generatedJWT(user.id, user.name, user.email);
 
     // Responder con la información del usuario y el token
     res.status(201).json({
       ok: true,
       msg: "User created!",
       uid: user.id,
+      email: user.email,
       name: user.name,
       token
     });
 
   } catch (error) {
-    console.error(error); // Para facilitar el debugging
+    console.error(error); 
     res.status(500).json({
       ok: false,
       msg: "User not created",
@@ -92,9 +93,10 @@ const userRegister = async(req, res = response) => {
 
 const userRenew = async(req, res = response) => {
 
-  const { uid, name } = req
+  const { uid, name, email } = req
 
-  const token = await generatedJWT( uid, name )
+
+  const token = await generatedJWT( uid, name, email )
 
 
   res.json({
@@ -102,6 +104,7 @@ const userRenew = async(req, res = response) => {
     msg: "Renew",
     token,
     name,
+    email,
     uid,
   })
 
